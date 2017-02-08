@@ -36,7 +36,7 @@ Then i tried **’00’ + plaintext**, yields an 33KB output file:
 ![]()  
 It seemed closer to the answer! After i tried some different two digits salt, i found the size of output files are similar (around 33 KB).  
 So, formspring might use **SHA256(SALT+Password)** (SALT is a two digits number which **changes randomly** or **increases with a same speed**)  
-After i know what the salt possibly is, i tried to find the pattern of how it changes. But filed.  
+After i know what the salt possibly is, i tried to find the pattern of how it changes. But failed.  
 Since i already know that **the salt could be any number form 00 to 99**, i wrote a loop **to add 00 to 99** in front of every password in the dictionary and check if the SHA256 translation is existed in the formspring.txt.  
 **After 84 minutes, it yields an 2.9 MB outputfile `formspring_Decrypt2.txt` with 35058 lines. So the success rate is 35058/419564 ≈ 0.08**. Based on the rate from **linkedin** and **xsplit**, this is a reasonable hit rate.  
 Then i open the output file **`formspring_Decrypt2.txt`** to check what are those passwords like.  
